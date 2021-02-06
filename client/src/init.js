@@ -1,8 +1,10 @@
 var mqtt = require('mqtt')
-var client  = mqtt.connect('mqtt://localhost:1883')
+var client  = mqtt.connect('mqtt://206.189.97.240:1883')
  
 client.on('connect', function () {
-  client.publish('weight', '75');
+  setInterval(() => {
+    client.publish('weight', `${Math.random() * (80 - 10) + 10}|cefet|142.11.34.8`);
+  }, 60000);
 })
  
 client.on('message', function (topic, message) {
