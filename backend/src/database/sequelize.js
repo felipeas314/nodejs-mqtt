@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
 
 const DATABASE = process.env.DATABASE || 'database_mqtt';
-const USER = 'postgres';
-const PASSWORD = 'postgres';
+const USER = 'asterisk';
+const PASSWORD = '123456';
 
 const sequelize = new Sequelize(DATABASE, USER, PASSWORD, {
-    host: '172.17.0.3',
+    host: 'localhost',
     dialect: 'postgres',
     logging: false,
     pool: {

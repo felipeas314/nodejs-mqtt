@@ -46,9 +46,9 @@ server.subscribe('weight',(data,x) => {
   console.log('data',data,x.toString());
   // let values = x.toString().split('|');
   Measurement.create({
-    locale:'ifce',
-    ip: '180.100.54.10',
-    weight: x.toString()
+    local:'ifce',
+    ip_de_origem: '180.100.54.10',
+    peso: x.toString()
   }).then(() => {
     console.log('Inserido no banco de dados com sucesso');
   }).catch(err => {
