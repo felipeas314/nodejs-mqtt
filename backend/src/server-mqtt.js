@@ -44,11 +44,11 @@ server.on('ready', setup);
 
 server.subscribe('weight',(data,x) => {
   console.log('data',data,x.toString());
-  let values = x.toString().split('|');
+  // let values = x.toString().split('|');
   Measurement.create({
-    locale:values[1] ,
-    ip: values[2],
-    weight: values[0]
+    locale:'ifce',
+    ip: '180.100.54.10',
+    weight: x.toString()
   }).then(() => {
     console.log('Inserido no banco de dados com sucesso');
   }).catch(err => {
